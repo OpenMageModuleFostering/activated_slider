@@ -7,7 +7,7 @@
 	</slider_adminhtml_slider_index>
 	
 	<slider_adminhtml_slider_grid>
-		<block type="slider/adminhtml_slider_grid" name="root" />
+		<block type="slider/adminhtml_slider_edit_tab_banner" name="root" />
 	</slider_adminhtml_slider_grid>
 	
 	<slider_adminhtml_slider_new>
