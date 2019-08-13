@@ -5,7 +5,8 @@
  * @author Activated
  */
 
-class Activated_Slider_Block_Slider extends Mage_Core_Block_Template
+class Activated_Slider_Block_Slider extends Mage_Core_Block_Template 
+	implements Mage_Widget_Block_Interface
 {
 	/**
 	 * Slider id
@@ -35,6 +36,7 @@ class Activated_Slider_Block_Slider extends Mage_Core_Block_Template
 		if (Mage::helper('slider')->isEnabled()) {
 			$html = parent::_toHtml();
 			$this->setId($this->getSliderId());
+			Mage::log('To HTML hit', null, 'banner.log');
 			return $html;
 		}
 	}
