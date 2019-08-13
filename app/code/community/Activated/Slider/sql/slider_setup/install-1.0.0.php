@@ -64,7 +64,7 @@ $table = $installer->getConnection()
 			'nullable' => true,
 			'default' => null
 		), 'Image media path')
-		->addColumn('caption', Varien_Db_Ddl_Table::TYPE_TEXT, 255, array(
+		->addColumn('caption', Varien_Db_Ddl_Table::TYPE_TEXT, '2M', array(
 			'nullable' => true,
 			'default' => null
 		), 'Caption')
