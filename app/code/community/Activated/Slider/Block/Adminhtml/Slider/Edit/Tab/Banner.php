@@ -29,6 +29,9 @@ implements Mage_Adminhtml_Block_Widget_Tab_Interface
 	protected function _prepareCollection()
 	{
 		$sliderId = Mage::registry('slider')->getId();
+		//$prefix = Mage::getConfig()->getTablePrefix();
+		$reference_table = Mage::helper('slider/admin')->getTable('slider/reference');
+		Mage::log($reference_table, null, 'banner.log');
 		
 		if (empty($sliderId)) {
 			$sliderId = '0';
@@ -36,9 +39,9 @@ implements Mage_Adminhtml_Block_Widget_Tab_Interface
 		
 		$collection = Mage::getModel('slider/banner')->getCollection();
 		$collection->getSelect()
-					->joinLeft('activated_reference', 
-						'main_table.banner_id = activated_reference.banner_id && ' . $sliderId . ' = activated_reference.slider_id', 
-						array('activated_reference.position'));
+					->joinLeft($reference_table, 
+						'main_table.banner_id = ' . $reference_table . '.banner_id && ' . $sliderId . ' = ' . $reference_table . '.slider_id', 
+						array($reference_table . '.position'));
 		$this->setCollection($collection);
 		return parent::_prepareCollection();
 	}

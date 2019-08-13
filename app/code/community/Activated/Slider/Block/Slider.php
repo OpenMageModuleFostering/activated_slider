@@ -36,7 +36,6 @@ class Activated_Slider_Block_Slider extends Mage_Core_Block_Template
 		if (Mage::helper('slider')->isEnabled()) {
 			$html = parent::_toHtml();
 			$this->setId($this->getSliderId());
-			Mage::log('To HTML hit', null, 'banner.log');
 			return $html;
 		}
 	}
@@ -64,6 +63,7 @@ class Activated_Slider_Block_Slider extends Mage_Core_Block_Template
 	public function getBanners()
 	{
 		$sliderId = $this->getSliderId();
+		$reference_table = Mage::helper('slider/admin')->getTable('slider/reference');
 		
 		// Check for block tag slider id
 		if ($sliderId) {
@@ -73,8 +73,8 @@ class Activated_Slider_Block_Slider extends Mage_Core_Block_Template
 		if (is_null($this->_bannerCollection)) {
 			$this->_bannerCollection = $this->_getBanners();
 			$this->_bannerCollection->getSelect()
-					->join('activated_reference',
-						'main_table.banner_id = activated_reference.banner_id and activated_reference.slider_id = "' . $this->_id . '"'
+					->join($reference_table,
+						'main_table.banner_id = ' . $reference_table . '.banner_id and ' . $reference_table . '.slider_id = "' . $this->_id . '"'
 					)
 					->order('position');
 		}

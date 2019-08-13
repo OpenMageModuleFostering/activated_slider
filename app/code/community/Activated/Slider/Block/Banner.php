@@ -30,11 +30,13 @@ class Activated_Slider_Block_Banner extends Mage_Core_Block_Template
 	 */
 	public function getCollection()
 	{
+		$reference_table = Mage::helper('slider/admin')->getTable('slider/reference');
+
 		if (is_null($this->_bannerCollection)) {
 			$this->_bannerCollection = $this->_getCollection();
 			$this->_bannerCollection->getSelect()
-					->join('activated_reference',
-						'main_table.banner_id = activated_reference.banner_id and activated_reference.slider_id = "' . $this->_id . '"'
+					->join($reference_table,
+						'main_table.banner_id = ' . $reference_table . '.banner_id and ' . $reference_table '.slider_id = "' . $this->_id . '"'
 					);
 		}
 		

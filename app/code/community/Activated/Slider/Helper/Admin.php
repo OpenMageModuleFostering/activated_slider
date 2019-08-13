@@ -13,4 +13,8 @@ class Activated_Slider_Helper_Admin extends Mage_Core_Helper_Abstract
 	{
 		return Mage::getSingleton('admin/session')->isAllowed('slider/manage/' . $action);
 	}
+
+	public function getTable($table) {
+		return Mage::getSingleton('core/resource')->getTableName($table);
+	}
 }
