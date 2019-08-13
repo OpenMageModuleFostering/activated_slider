@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <layout version="1.0.0">
-	<default>
+	<cms_index_index>
 		<reference name="head">
 			<action method="addCss">
 				<stylesheet>css/activated/slider/flexslider.css</stylesheet>
@@ -14,13 +14,7 @@
 			<action method="addJs">
 				<script>activated/slider/banner.js</script>
 			</action>
-			<action method="removeItem">
-				<type>skin_js</type>
-				<name>js/lib/jquery-1.10.2.min.js</name>
-			</action>
 		</reference>
-	</default>
-	<cms_index_index>
 		<reference name="content">
 			<block type="slider/slider" name="banner" before="-" template="activated/slider/banner.phtml">
 				<action method="setId">

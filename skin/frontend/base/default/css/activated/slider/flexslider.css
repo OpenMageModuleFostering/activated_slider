@@ -37,7 +37,7 @@
 /* FlexSlider Necessary Styles
 *********************************/
 .activated-banner {margin: 0; padding: 0;}
-.activated-banner .activated-slides > li {margin-left: 0; display: none; -webkit-backface-visibility: hidden; position: relative; } /* Hide the slides before the JS is loaded. Avoids image jumping */
+.activated-banner .activated-slides > li {display: none; -webkit-backface-visibility: hidden; position: relative; } /* Hide the slides before the JS is loaded. Avoids image jumping */
 .activated-banner .activated-slides img {width: 100%; display: block;}
 .activated-pauseplay span {text-transform: capitalize;}
 
@@ -69,7 +69,7 @@ html[xmlns] .activated-slides {display: block;}
 .activated-banner:hover .activated-next { opacity: 0.7; right: 10px; }
 .activated-banner:hover .activated-next:hover, .flexslider:hover .flex-prev:hover { opacity: 1; }
 .activated-direction-nav .activated-disabled { opacity: 0!important; filter:alpha(opacity=0); cursor: default; }
-.activated-direction-nav a:before  { font-family: "flexslider-icon"; font-style: normal; font-size: 40px; display: inline-block; content: '\f001'; }
+.activated-direction-nav a:before  { font-family: "flexslider-icon"; font-size: 40px; display: inline-block; content: '\f001'; }
 .activated-direction-nav a.activated-next:before  { content: '\f002'; }
 
 /* Pause/Play */

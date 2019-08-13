@@ -28,28 +28,28 @@ Mage_Core_Helper_Abstract
 	 * 
 	 * @var int
 	 */
-	const MIN_HEIGHT = 50;
+	const MIN_HEIGHT = 1;
 	
 	/**
 	 * Maximum image height in pixels
 	 * 
 	 * @var int
 	 */
-	const MAX_HEIGHT = 1200;
+	const MAX_HEIGHT = 5000;
 	
 	/**
 	 * Minimum image width in pixels
 	 * 
 	 * @var int
 	 */
-	const MIN_WIDTH = 50;
+	const MIN_WIDTH = 1;
 	
 	/**
 	 * Maximum image width in pixels
 	 * 
 	 * @var int
 	 */
-	const MAX_WIDTH = 1920;
+	const MAX_WIDTH = 5000;
 	
 	/**
 	 * Array of image size limitation
