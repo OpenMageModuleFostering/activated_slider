@@ -5,14 +5,17 @@
 			<action method="addCss">
 				<stylesheet>css/activated/slider/flexslider.css</stylesheet>
 			</action>
-			<action method="addJs" ifconfig="slider/view/jquery">
-				<script>activated/slider/jquery.js</script>
+			<action method="addItem" ifconfig="slider/view/jquery">
+				<type>skin_js</type>
+				<name>js/activated/slider/jquery.js</name>
 			</action>
-			<action method="addJs">
-				<script>activated/slider/jquery.flexslider-min.js</script>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/activated/slider/jquery.flexslider-min.js</name>
 			</action>
-			<action method="addJs">
-				<script>activated/slider/banner.js</script>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/activated/slider/banner.js</name>
 			</action>
 		</reference>
 	</default>

@@ -36,7 +36,7 @@ class Activated_Slider_Block_Banner extends Mage_Core_Block_Template
 			$this->_bannerCollection = $this->_getCollection();
 			$this->_bannerCollection->getSelect()
 					->join($reference_table,
-						'main_table.banner_id = ' . $reference_table . '.banner_id and ' . $reference_table '.slider_id = "' . $this->_id . '"'
+						'main_table.banner_id = ' . $reference_table . '.banner_id and ' . $reference_table . '.slider_id = "' . $this->_id . '"'
 					);
 		}
 		
