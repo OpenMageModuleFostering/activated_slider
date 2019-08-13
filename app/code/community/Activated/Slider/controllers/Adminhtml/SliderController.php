@@ -281,15 +281,6 @@ class Activated_Slider_Adminhtml_SliderController extends Mage_Adminhtml_Control
 	 */
 	public function gridAction() 
 	{
-		$model = Mage::getModel('slider/slider');
-		
-		$sliderId = $this->getRequest()->getParam('id');
-
-		if ($sliderId) {
-			$model->load($sliderId);
-			Mage::register('slider', $model);
-		}
-
 		$this->loadLayout();
 		$this->renderLayout();
 	}

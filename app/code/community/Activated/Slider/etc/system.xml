@@ -1,16 +1,16 @@
 <?xml version="1.0" ?>
 <config>
 	<tabs>
-		<activated_extensions translate="label">
+		<slider translate="label">
 			<label>Activated Extensions</label>
 			<sort_order>100</sort_order>
-		</activated_extensions>
+		</slider>
 	</tabs>
 	<sections>
 		<slider>
 			<class>separator-top</class>
 			<label>Slider</label>
-			<tab>activated_extensions</tab>
+			<tab>slider</tab>
 			<frontend_type>text</frontend_type>
 			<sort_order>500</sort_order>
 			<show_in_default>1</show_in_default>

@@ -1,20 +1,20 @@
 <?xml version="1.0" ?>
 <layout>
-	<adminhtml_slider_index>
+	<slider_adminhtml_slider_index>
 		<reference name="content">
 			<block type="slider/adminhtml_slider" name="slider" />
 		</reference>
-	</adminhtml_slider_index>
+	</slider_adminhtml_slider_index>
 	
-	<adminhtml_slider_grid>
-		<block type="slider/adminhtml_slider_edit_tab_banner" name="root" />
-	</adminhtml_slider_grid>
+	<slider_adminhtml_slider_grid>
+		<block type="slider/adminhtml_slider_grid" name="root" />
+	</slider_adminhtml_slider_grid>
 	
-	<adminhtml_slider_new>
+	<slider_adminhtml_slider_new>
 		<update handle="slider_adminhtml_slider_edit" />
-	</adminhtml_slider_new>
+	</slider_adminhtml_slider_new>
 	
-	<adminhtml_slider_edit>
+	<slider_adminhtml_slider_edit>
 		<update handle="editor" />
 		<reference name="content">
 			<block type="slider/adminhtml_slider_edit" name="slider_edit" />
@@ -33,23 +33,23 @@
 				</action>
 			</block>
 		</reference>
-	</adminhtml_slider_edit>
+	</slider_adminhtml_slider_edit>
 	
-	<adminhtml_banner_index>
+	<slider_adminhtml_banner_index>
 		<reference name="content">
 			<block type="slider/adminhtml_banner" name="banner" />
 		</reference>
-	</adminhtml_banner_index>
+	</slider_adminhtml_banner_index>
 	
-	<adminhtml_banner_grid>
+	<slider_adminhtml_banner_grid>
 		<block type="slider/adminhtml_banner_grid" name="root" />
-	</adminhtml_banner_grid>
+	</slider_adminhtml_banner_grid>
 	
-	<adminhtml_banner_new>
+	<slider_adminhtml_banner_new>
 		<update handle="slider_adminhtml_banner_edit" />
-	</adminhtml_banner_new>
+	</slider_adminhtml_banner_new>
 	
-	<adminhtml_banner_edit>
+	<slider_adminhtml_banner_edit>
 		<update handle="editor" />
 		<reference name="content">
 			<block type="slider/adminhtml_banner_edit" name="banner_edit" />
@@ -73,5 +73,5 @@
 				</action>
 			</block>
 		</reference>
-	</adminhtml_banner_edit>
+	</slider_adminhtml_banner_edit>
 </layout>

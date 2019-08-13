@@ -4,8 +4,7 @@ $installer->startSetup();
 /**
  * Create slider table
  */
-if ($installer->getConnection()->isTableExists($installer->getTable('slider/slider')) != true) {
-	$table = $installer->getConnection()
+$table = $installer->getConnection()
 		->newTable($installer->getTable('slider/slider'))
 		->addColumn('slider_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
 			'unsigned' => true,
@@ -45,14 +44,12 @@ if ($installer->getConnection()->isTableExists($installer->getTable('slider/slid
 				array('type' => Varien_Db_Adapter_Interface::INDEX_TYPE_INDEX)
 		)
 		->setComment('Activated slider');
-	$installer->getConnection()->createTable($table);
-}
+$installer->getConnection()->createTable($table);
 
 /**
  * Create banners table
  */
-if ($installer->getConnection()->isTableExists($installer->getTable('slider/banner')) != true) {
-	$table = $installer->getConnection()
+$table = $installer->getConnection()
 		->newTable($installer->getTable('slider/banner'))
 		->addColumn('banner_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
 			'unsigned' => true,
@@ -67,7 +64,7 @@ if ($installer->getConnection()->isTableExists($installer->getTable('slider/bann
 			'nullable' => true,
 			'default' => null
 		), 'Image media path')
-		->addColumn('caption', Varien_Db_Ddl_Table::TYPE_TEXT, '2M', array(
+		->addColumn('caption', Varien_Db_Ddl_Table::TYPE_TEXT, 255, array(
 			'nullable' => true,
 			'default' => null
 		), 'Caption')
@@ -84,14 +81,12 @@ if ($installer->getConnection()->isTableExists($installer->getTable('slider/bann
 			array('type' => Varien_Db_Adapter_Interface::INDEX_TYPE_INDEX)
 		)
 		->setComment('Activated slides');
-	$installer->getConnection()->createTable($table);
-}
+$installer->getConnection()->createTable($table);
 
 /*
  * Slider banner reference
  */
-if ($installer->getConnection()->isTableExists($installer->getTable('slider/reference')) != true) {
-	$table = $installer->getConnection()
+$table = $installer->getConnection()
 		->newTable($installer->getTable('slider/reference'))
 		->addColumn('reference_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
 			'unsigned' => true,
@@ -121,7 +116,6 @@ if ($installer->getConnection()->isTableExists($installer->getTable('slider/refe
 		'banner_id', $installer->getTable('slider/banner'), 'banner_id', 
 		Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
 		->setComment('Banner reference');
-	$installer->getConnection()->createTable($table);
-}
+$installer->getConnection()->createTable($table);
 
 $installer->endSetup();

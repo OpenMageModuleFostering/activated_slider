@@ -2,7 +2,7 @@
 <config>
 	<modules>
 		<Activated_Slider>
-			<version>1.0.10</version>
+			<version>1.0.0</version>
 		</Activated_Slider>
 	</modules>
 	<global>
@@ -68,13 +68,13 @@
 	</frontend>
 	<admin>
 		<routers>
-			<adminhtml>
+			<slider>
+				<use>admin</use>
 				<args>
-					<modules>
-						<slider after="Mage_Adminhtml">Activated_Slider_Adminhtml</slider>
-					</modules>
+					<module>Activated_Slider</module>
+					<frontName>slider</frontName>
 				</args>
-			</adminhtml>
+			</slider>
 		</routers>
 	</admin>
 	<adminhtml>

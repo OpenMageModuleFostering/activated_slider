@@ -8,7 +8,6 @@ class Activated_Slider_Block_Adminhtml_Slider_Edit_Tab_Banner extends
 Mage_Adminhtml_Block_Widget_Grid
 implements Mage_Adminhtml_Block_Widget_Tab_Interface
 {
-
 	/**
 	 * Init grid default properties
 	 */
@@ -29,8 +28,7 @@ implements Mage_Adminhtml_Block_Widget_Tab_Interface
 	 */
 	protected function _prepareCollection()
 	{
-		$sliderId = $this->_getSlider()->getId();
-		$reference_table = Mage::helper('slider/admin')->getTable('slider/reference');
+		$sliderId = Mage::registry('slider')->getId();
 		
 		if (empty($sliderId)) {
 			$sliderId = '0';
@@ -38,9 +36,9 @@ implements Mage_Adminhtml_Block_Widget_Tab_Interface
 		
 		$collection = Mage::getModel('slider/banner')->getCollection();
 		$collection->getSelect()
-					->joinLeft($reference_table, 
-						'main_table.banner_id = ' . $reference_table . '.banner_id && ' . $sliderId . ' = ' . $reference_table . '.slider_id', 
-						array($reference_table . '.position'));
+					->joinLeft('activated_reference', 
+						'main_table.banner_id = activated_reference.banner_id && ' . $sliderId . ' = activated_reference.slider_id', 
+						array('activated_reference.position'));
 		$this->setCollection($collection);
 		return parent::_prepareCollection();
 	}
@@ -64,8 +62,7 @@ implements Mage_Adminhtml_Block_Widget_Tab_Interface
 		$this->addColumn('banner_id', array(
 			'header'	=> Mage::helper('slider')->__('ID'),
 			'width'		=> '50px',
-			'index'		=> 'banner_id',
-			'filter_index' => 'main_table.banner_id'
+			'index'		=> 'banner_id'
 		));
 		
 		$this->addColumn('banner_title', array(
@@ -83,16 +80,6 @@ implements Mage_Adminhtml_Block_Widget_Tab_Interface
 		));
 		
 		return parent::_prepareColumns();
-	}
-
-	/**
-	* Get currently edited slider
-	*
-	* @return object
-	*/
-	protected function _getSlider()
-	{
-		return Mage::registry('slider');
 	}
 	
 	/**
@@ -112,7 +99,7 @@ implements Mage_Adminhtml_Block_Widget_Tab_Interface
 	 */
 	public function getGridUrl()
 	{
-		return $this->getUrl('*/*/grid', array('id' => $this->_getSlider()->getId(), '_current' => true));
+		return $this->getUrl('*/adminhtml_banner/grid', array('_current' => true));
 	}
 	
 	/**
@@ -165,7 +152,7 @@ implements Mage_Adminhtml_Block_Widget_Tab_Interface
 		$model = Mage::getModel('slider/reference')
 				->getCollection()
 				->addFieldToFilter(
-			'slider_id', $this->_getSlider()->getId()
+			'slider_id', Mage::registry('slider')->getId()
 		);
 		
 		$referenced = array();

@@ -76,6 +76,7 @@ Mage_Core_Helper_Abstract
 	 */
 	public function getHomeId()
 	{
+		Mage::log(Mage::getStoreConfig('slider/placement/home'), null, 'banners.log');
 		return Mage::getStoreConfig('slider/placement/home');
 	}
 }
