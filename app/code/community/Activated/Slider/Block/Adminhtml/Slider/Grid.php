@@ -73,4 +73,3 @@ Mage_Adminhtml_Block_Widget_Grid
 		return $this->getUrl('*/*/grid', array('_current' => true));
 	}
 }
-?>

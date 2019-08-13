@@ -15,5 +15,3 @@ class Activated_Slider_Model_Banner extends Mage_Core_Model_Abstract
 		$this->_init('slider/banner');
 	}
 }
-
-?>

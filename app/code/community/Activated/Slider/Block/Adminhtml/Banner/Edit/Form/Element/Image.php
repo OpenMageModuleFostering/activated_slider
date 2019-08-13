@@ -23,4 +23,3 @@ Varien_Data_Form_Element_Image
 		return $url;
 	}
 }
-?>

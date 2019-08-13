@@ -106,4 +106,3 @@ implements Mage_Adminhtml_Block_Widget_Tab_Interface
 		);
 	}
 }
-?>

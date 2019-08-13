@@ -16,12 +16,12 @@
 					<children>
 						<manage translate="title" module="slider">
 							<title>Manage Sliders</title>
-							<action>slider/adminhtml_slider</action>
+							<action>adminhtml/slider/index</action>
 							<sort_order>50</sort_order>
 						</manage>
 						<banner translate="title" module="slider">
 							<title>Manage Banners</title>
-							<action>slider/adminhtml_banner</action>
+							<action>adminhtml/banner/index</action>
 							<sort_order>60</sort_order>
 						</banner>
 					</children> 

@@ -18,4 +18,3 @@ Mage_Adminhtml_Block_Widget_Tabs
 		$this->setTitle(Mage::helper('slider')->__('Banner Item Info'));
 	}
 }
-?>

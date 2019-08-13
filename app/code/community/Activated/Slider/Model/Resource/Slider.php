@@ -42,5 +42,3 @@ Mage_Core_Model_Resource_Db_Abstract
 		return $this->_getWriteAdapter()->fetchPairs($select, $bind);
 	}
 }
-
-?>

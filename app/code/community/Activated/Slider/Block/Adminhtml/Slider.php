@@ -22,4 +22,3 @@ class Activated_Slider_Block_Adminhtml_Slider extends Mage_Adminhtml_Block_Widge
 		}
 	}
 }
-?>

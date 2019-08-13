@@ -15,7 +15,3 @@ class Activated_Slider_Model_Reference extends Mage_Core_Model_Abstract
 		$this->_init('slider/reference');
 	}
 }
-
-?>
-
-

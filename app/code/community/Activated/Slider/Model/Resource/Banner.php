@@ -16,5 +16,3 @@ Mage_Core_Model_Resource_Db_Abstract
 		$this->_init('slider/banner', 'banner_id');
 	}
 }
-
-?>

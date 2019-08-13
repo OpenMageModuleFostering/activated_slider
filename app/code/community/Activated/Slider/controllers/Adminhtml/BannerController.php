@@ -245,4 +245,3 @@ extends Mage_Adminhtml_Controller_Action
 		$this->_forward('index');
 	}
 }
-?>

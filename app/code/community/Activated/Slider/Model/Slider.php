@@ -75,6 +75,3 @@ class Activated_Slider_Model_Slider extends Mage_Core_Model_Abstract
 		return $array;
 	}
 }
-
-?>
-

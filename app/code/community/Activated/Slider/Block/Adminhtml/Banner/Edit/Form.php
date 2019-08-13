@@ -26,4 +26,3 @@ Mage_Adminhtml_Block_Widget_Form
 		return parent::_prepareForm();
 	}
 }
-?>
