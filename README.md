@@ -1,3 +1,5 @@
+
+
 ## Original Package Description
 
 Slider manager with responsive capabilities.
