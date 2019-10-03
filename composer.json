@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Activated_Slider",
+    "name": "OpenMageModuleFostering\/Activated_Slider",
     "type": "magento-module",
     "license": "EULA",
     "homepage": "",
     "description": "Slider manager with responsive capabilities.",
     "authors": [
-    {
-        "name": "Activated Apps",
-        "email": "admin@activatedapps.com"
-    }
-],
+        {
+            "name": "Activated Apps",
+            "email": "admin@activatedapps.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
